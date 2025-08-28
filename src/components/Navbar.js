@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-[#F8FAFC] px-6 md:px-12 py-4 flex items-center justify-between shadow-sm">
+    <nav className="w-full bg-white px-6 md:px-12 py-4 flex items-center justify-between shadow-sm">
     {/* Left: Logo */}
     <div className="flex items-center gap-2">
       <Image
-        src="/Krishecarbon_logo.svg"
+        src="/kriSHE_logo.svg"
         alt="KriSHE Carbon Logo"
         href="/"
         width={100}
@@ -20,7 +20,6 @@ export default function Navbar() {
       
       <Link href="/how-it-works">How It Works</Link>
       <Link href="/technology">Technology</Link>
-      <Link href="/impact">Impact</Link>
       <Link href="/about">About Us</Link>
       <Link href="/buy-credits">Buy Credits</Link>
       <Link href="/get-started">

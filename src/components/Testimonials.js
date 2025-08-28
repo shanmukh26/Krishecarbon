@@ -1,85 +1,59 @@
-// components/TestimonialSection.js (or directly in your index.js)
+// src/components/Testimonials.js
+"use client";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
-import Slider from "react-slick";
-
-const testimonials = [
-  {
-    name: "Amit .B",
-    location: "Hyderabad",
-    image: "/images/amit.jpg", // replace with correct path
-    content:
-      "Built into the KriSHE Carbon platform, our marketplace empowers Climapreneurs to directly sell high-quality, MRV-verified biochar carbon credits to buyers across the world. Each credit is traceable from soil to sale, ensuring trust, transparency, and value for all.",
-  },
-  {
-    name: "Raghav .M",
-    location: "Hyderabad",
-    image: "/images/raghav.jpg",
-    content:
-      "Built into the KriSHE Carbon platform, our marketplace empowers Climapreneurs to directly sell high-quality, MRV-verified biochar carbon credits to buyers across the world. Each credit is traceable from soil to sale, ensuring trust, transparency, and value for all.",
-  },
-  {
-    name: "Amit .B",
-    location: "Hyderabad",
-    image: "/images/amit.jpg",
-    content:
-      "Built into the KriSHE Carbon platform, our marketplace empowers Climapreneurs to directly sell high-quality, MRV-verified biochar carbon credits to buyers across the world. Each credit is traceable from soil to sale, ensuring trust, transparency, and value for all.",
-  },
-];
-
-const TestimonialSection = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+const Testimonials = () => {
+  const testimonials = [
+    { quote: "KriSHE helped increase our yields while creating extra income.", author: "Ramesh K.", role: "Farmer, Telangana", image: "/farmers/ramesh.jpg" },
+    { quote: "Biochar improved our soil moisture and crop health.", author: "Anita P.", role: "Farmer, Andhra Pradesh", image: "/farmers/anita.jpg" },
+    { quote: "Simple process. Real benefits for our community.", author: "Mahesh V.", role: "Climapreneur", image: "/farmers/mahesh.jpg" },
+  ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0C3B2E] to-[#178D46] py-16 px-6 md:px-20 text-white text-center font-merriweather">
-      <h2 className="text-3xl font-semibold mb-4">Why our partners believe in kriSHE.</h2>
-      <p className="text-base mb-10 text-gray-200 max-w-2xl mx-auto">
-        Built into the kriSHE Carbon platform, our marketplace empowers Climapreneurs to directly sell high-quality, MRV-verified biochar carbon credits to buyers across the world.
-      </p>
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What Our Partners Say</h2>
+          <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Real stories from farmers and community members who are part of the regenerative revolution.
+          </p>
+        </motion.div>
 
-      <Slider {...settings}>
-        {testimonials.map((item, index) => (
-          <div key={index} className="px-3">
-            <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-md h-full flex flex-col justify-between min-h-[370px]">
-              <div className="text-3xl text-green-700 mb-4">“</div>
-              <p className="text-sm text-gray-700 mb-6">{item.content}</p>
-              <div className="w-12 h-1 bg-green-600 mx-auto mb-4 rounded" />
-              <div className="flex flex-col items-center">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-12 h-12 rounded-full object-cover mb-2"
-                />
-                <p className="font-semibold">{item.name}</p>
-                <p className="text-xs text-gray-500">{item.location}</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((t, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-gray-50 border border-gray-100 p-8 rounded-2xl shadow-md"
+            >
+              <div className="mb-6">
+                <Quote className="w-8 h-8 text-emerald-600 mb-4" />
+                <p className="text-gray-700 leading-relaxed italic">“{t.quote}”</p>
               </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+              <div className="flex items-center">
+                <div>
+                  <div className="font-semibold text-gray-900">{t.author}</div>
+                  <div className="text-sm text-gray-600">{t.role}</div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default TestimonialSection;
+export default Testimonials;
+

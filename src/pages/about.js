@@ -121,15 +121,13 @@ export default function About() {
     {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <button 
-        className="px-8 py-4 text-white font-merriweather text-lg rounded-lg hover:opacity-90 transition-opacity duration-300 min-w-[200px]"
-        style={{ backgroundColor: '#25632D' }}
+        className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl"
       >
         Join as Climapreneur
       </button>
       
       <button 
-        className="px-8 py-4 text-white font-merriweather text-lg rounded-lg hover:opacity-90 transition-opacity duration-300 min-w-[200px]"
-        style={{ backgroundColor: '#25632D' }}
+        className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl"
       >
         Partner/ NGO/ Donor
       </button>

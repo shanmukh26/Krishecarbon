@@ -1,75 +1,89 @@
+import React from 'react';
 import Image from "next/image";
-import { FaInstagram, FaDribbble, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Leaf, Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#E4ECE5] text-gray-700 py-12 px-6 md:px-20 font-merriweather">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-start gap-10">
-
-        {/* Left Section - Logo & Copyright */}
-        <div className="flex flex-col items-start gap-6 h-full">
-          <p className="text-sm">Copyright © 2024 kriSHE Carbon.<br />All rights reserved</p>
-
-          <div className="flex gap-4 mt-2 text-gray-600 text-lg">
-            <FaInstagram />
-            <FaDribbble />
-            <FaTwitter />
-            <FaYoutube />
+    <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {/* Brand */}
+          <div className="col-span-2">
+            <div className="flex items-center mb-6">
+              <div className="bg-white p-2 rounded-xl mr-3">
+                <Image
+                        src="/kriSHE_logo.svg"
+                        alt="KriSHE Carbon Logo"
+                        href="/"
+                        width={50}
+                        height={50}
+                      />
+              </div>
+              <h3 className="text-2xl font-bold">KriSHE Carbon</h3>
+            </div>
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+              Empowering Rural India. Healing the Planet. We help smallholder farmers turn 
+              agricultural waste into income through traceable biochar and verified carbon credits.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
-
-          <div className="mt-auto">
-            <Image src="/Krishecarbon_logo.svg" alt="Logo" width={40} height={40} />
-          </div>
-        </div>
-
-        {/* Middle Section - Links */}
-        <div className="flex gap-16">
+          
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">How It Works</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Impact</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Buy Credits</a></li>
+            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Technology</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Impact</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Buy Credits</a></li>
             </ul>
           </div>
+          
+          {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Support</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Legal</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Status</a></li>
+            <h4 className="text-lg font-semibold mb-6">Contact Info</h4>
+            <ul className="space-y-4">
+              <li className="flex items-center">
+                <Mail className="w-5 h-5 mr-3 text-emerald-500" />
+                <span className="text-gray-400">hello@krishecarbon.com</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="w-5 h-5 mr-3 text-emerald-500" />
+                <span className="text-gray-400">+91 9876543210</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="w-5 h-5 mr-3 mt-0.5 text-emerald-500" />
+                <span className="text-gray-400">Bangalore, Karnataka, India</span>
+              </li>
             </ul>
           </div>
         </div>
-
-        {/* Right Section - Newsletter */}
-        <div className="w-full md:w-auto">
-          <h4 className="font-semibold text-lg mb-4">Stay up to date</h4>
-          <div className="flex bg-white border rounded-md items-center px-4 py-2 w-full md:w-80">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-grow bg-transparent outline-none text-sm"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="text-gray-600"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+        
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 mb-4 md:mb-0">
+              © 2025 KriSHE Carbon. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+            </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
