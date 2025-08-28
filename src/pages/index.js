@@ -20,7 +20,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-           <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-12">
+           <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-12 pb-16">
                     {/* Background with animated gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/5 via-transparent to-green-600/5"></div>
