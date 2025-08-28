@@ -468,9 +468,10 @@ export default function Home() {
           className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl hover:border-emerald-200 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between w-full aspect-[1/1.1] mx-auto relative"
         >
           {/* Icon top-left */}
-          <img
+          <Image
             src={item.icon}
             alt={item.title}
+            fill
             className="absolute top-6 left-6 w-[88px] h-[92px]"
           />
 
